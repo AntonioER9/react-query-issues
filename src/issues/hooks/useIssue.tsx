@@ -15,7 +15,6 @@ export const getIssueComments = async( issueNumber: number ):Promise<Issue[]> =>
     return data;
 }
 
-
 export const useIssue = ( issueNumber: number ) => {
     
     const issueQuery = useQuery({
@@ -28,7 +27,6 @@ export const useIssue = ( issueNumber: number ) => {
         queryFn: () => getIssueComments( issueQuery.data!.number ),
         enabled: issueQuery.data !== undefined,
     });
-
 
     return {
         issueQuery,
